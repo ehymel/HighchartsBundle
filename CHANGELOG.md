@@ -1,9 +1,11 @@
-# Changelog
+# [1.7.1]
+
+* Add support for Symfony 5
 
 
-## [Unreleased]
+## [1.7.1]
 
-TBD
+* Add support for PHP 8
 
 
 ### [1.7.0] - 2020-01-12
