@@ -1,9 +1,9 @@
-# [1.7.1]
+### [1.7.2]
 
 * Add support for Symfony 5
 
 
-## [1.7.1]
+### [1.7.1]
 
 * Add support for PHP 8
 
