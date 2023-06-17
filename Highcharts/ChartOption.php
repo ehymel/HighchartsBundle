@@ -8,24 +8,15 @@ namespace Ob\HighchartsBundle\Highcharts;
  */
 class ChartOption
 {
-    private $option_name;
+    private string $option_name;
 
-    /**
-     * @param string $name
-     */
-    public function __construct($name)
+    public function __construct(string $name)
     {
         $this->option_name = $name;
         $this->{$name} = new \stdClass();
     }
 
-    /**
-     * @param string $name
-     * @param array  $value
-     *
-     * @return $this
-     */
-    public function __call($name, $value)
+    public function __call(string $name, array $value): self
     {
         $option_name = $this->option_name;
         $this->{$option_name}->{$name} = $value[0];
@@ -33,25 +24,13 @@ class ChartOption
         return $this;
     }
 
-    /**
-     * @param string $name
-     *
-     * @return mixed
-     */
-    public function __get($name)
+    public function __get(string $name): string
     {
         $option_name = $this->option_name;
-        $value = $this->{$option_name}->{$name};
-
-        return $value;
+        return $this->{$option_name}->{$name};
     }
 
-    /**
-     * @param string $name
-     *
-     * @return mixed
-     */
-    public function __isset($name)
+    public function __isset(string $name): bool
     {
         $option_name = $this->option_name;
         

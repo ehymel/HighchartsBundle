@@ -11,12 +11,7 @@ namespace Ob\HighchartsBundle\Highcharts;
  */
 class Highstock extends AbstractChart implements ChartInterface
 {
-    /**
-     * @param string $engine
-     *
-     * @return string
-     */
-    public function render($engine = 'jquery')
+    public function render(string $engine = 'jquery'): string
     {
         $chartJS = "";
         $chartJS .= $this->renderEngine($engine);

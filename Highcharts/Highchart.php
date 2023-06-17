@@ -22,12 +22,7 @@ class Highchart extends AbstractChart implements ChartInterface
         $this->initChartOption('noData');
     }
 
-    /**
-     * @param string $engine
-     *
-     * @return string
-     */
-    public function render($engine = 'jquery')
+    public function render(string $engine = 'jquery'): string
     {
         $chartJS = "";
         $chartJS .= $this->renderEngine($engine);
@@ -102,10 +97,7 @@ class Highchart extends AbstractChart implements ChartInterface
         return trim($chartJS);
     }
 
-    /**
-     * @return string
-     */
-    private function renderColorAxis()
+    private function renderColorAxis(): string
     {
         if (gettype($this->colorAxis) === 'array') {
             return $this->renderWithJavascriptCallback($this->colorAxis, "colorAxis");
@@ -116,10 +108,7 @@ class Highchart extends AbstractChart implements ChartInterface
         return "";
     }
 
-    /**
-     * @return string
-     */
-    private function renderPane()
+    private function renderPane(): string
     {
         if (get_object_vars($this->pane->pane)) {
             return "pane: " . json_encode($this->pane->pane) . ",\n";
@@ -128,10 +117,7 @@ class Highchart extends AbstractChart implements ChartInterface
         return "";
     }
 
-    /**
-     * @return string
-     */
-    private function renderDrilldown()
+    private function renderDrilldown(): string
     {
         if (get_object_vars($this->drilldown->drilldown)) {
             return "drilldown: " . json_encode($this->drilldown->drilldown) . ",\n";
