@@ -1,6 +1,11 @@
+### [1.7.3]
+
+* Add return type void for ObHighchartsExtension.php::load()
+
+
 ### [1.7.2]
 
-* Add support for Symfony 5
+* Add support for Symfony 6
 
 
 ### [1.7.1]
